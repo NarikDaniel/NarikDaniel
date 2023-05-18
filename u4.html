@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad IV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="img/jpg" href="img/icono.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <p>ARQUITECTURA DE COMPUTADORAS</p>
+        </div>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="u1.html">Unidad I</a></li>
+                <li><a href="u2.html">Unidad II</a></li>
+                <li><a href="u3.html">Unidad III</a></li>
+                <li><a href="u4.html">Unidad IV</a></li>
+                <li><a href="actPract.html">Pr&aacute;cticas</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="msg-area1">
+        <h2>Unidad IV</h2>
+        <h3>Procesamiento de Computadoras</h3>
+        <p>
+            El procesamiento que realiza una computadora es una serie de acciones que realiza un CPU cuando recibe
+            información por programas de software instalados en el disco duro de una computadora y cargados en la
+            memoria RAM. Aunque los sistemas informáticos modernos se han vuelto mucho más rápidos y complejos que sus
+            homólogos anteriores, siguen realizando el mismo tipo básico de procesamiento informático.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>4.1.- Aspectos básicos de la computación paralela</em></h4>
+        <hr color="red" size="10px" />
+        <img src="img/Img4-1.png" style="height: 30%; width: 30%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            La computación paralela es una técnica de procesamiento de
+            información que se basa en la utilización de múltiples
+            procesadores para llevar a cabo una tarea en paralelo, en lugar de
+            utilizar un solo procesador. Esta técnica permite mejorar
+            la velocidad y eficiencia de los cálculos y análisis de datos en la computadora.
+        </p>
+
+        <h5 style="padding-top: 5%;">Sistemas de procesamiento paralelo</h5>
+
+        <p>
+            Los sistemas de procesamiento paralelo se
+            pueden clasificar en dos categorías: simétricos y
+            asíncronos. Uno donde todos los procesadores
+            comparten la misma memoria, y otro donde cada
+            procesador tiene su propia memoria.
+        </p>
+
+        <h5 style="padding-top: 5%;">Herramientas de computación en paralelo</h5>
+
+        <p>
+            Las herramientas de computación en paralelo son programas y bibliotecas
+            que se utilizan para programar y ejecutar aplicaciones en sistemas
+            paralelos, de forma que sea posible explotar el máximo provecho a estos.
+        </p>
+
+        <img src="img/Img4-2.png" style="height: 30%; width: 30%; padding-top: 5%; padding-bottom: 3%;">
+
+        <p style="padding-bottom: 5%;">
+            Un ejemplo de esto es la herramienta <i>CUDA</i> desarrollada por Nvidia,
+            la cual permite que aplicaciones aprovechen el procesamiento paralelo para el
+            procesamiento de gráficos, usando la GPU como un coprocesador usando
+            paralelamente sus núcleos.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>4.2.- Tipos de computación paralela</em></h4>
+        <hr color="red" size="10px" />
+
+        <p style="padding-top: 5%;">
+            El paralelismo se ha empleado por mucho tiempo, sobre todo en la computación demandante,
+            el interés ha crecido debido a las limitaciones físicas que impiden el aumento de la frecuencia,
+            hay varias formas diferentes de computación paralela, como por ejemplo:
+        </p>
+
+        <ul style="margin-left: 3%;">
+            <li>
+                <b>Paralelismo a nivel de bit</b>: Es la aceleración en la arquitectura de computadoras
+                mediante la duplicación del tamaño de la palabra, reduciendo la cantidad de instrucciones
+                que el procesador debía ejecutar para realizar operaciones en variables cuyos tamaños eran
+                mayores que la longitud de la palabra.
+            </li>
+            <li style="padding-top: 3%;">
+                <b>Paralelismo a nivel de instrucción</b>: Se refiere a la posibilidad de reordenar y combinar en grupos
+                las instrucciones que conforman un programa para ser ejecutadas en paralelo.
+            </li>
+            <li style="padding-top: 3%;">
+                <b>Paralelismo a nivel de datos</b>: Es inherente en programas con ciclos y se enfoca en la distribución
+                de los datos entre los diferentes nodos computacionales que deben ser tratados en paralelo.
+            </li>
+            <li style="padding-top: 3%;">
+                <b>Paralelismo a nivel de tareas</b>: Se refiere a la capacidad de realizar cálculos completamente
+                diferentes en cualquier conjunto igual o diferente de datos.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;"><em>4.2.1- Clasificación</em></h5>
+
+        <p>
+            Las computadoras paralelas pueden ser clasificadas acorde con el nivel en el que el hardware soporta
+            paralelismo, siendo esta clasificación análoga a la distancia entre los nodos básicos de cómputo.
+            Estos no son excluyentes entre sí.
+        </p>
+
+        <h5 style="padding-top: 5%;">Computación Multinúcleo</h5>
+        <img src="img/Img4-3.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Un procesador multinúcleo es un procesador que incluye múltiples unidades de ejecución (núcleos) en el mismo
+            chip. Por ende un procesador multinúcleo puede ejecutar múltiples instrucciones por ciclo de secuencias de
+            instrucciones múltiples.
+        </p>
+
+        <h5 style="padding-top: 5%;">Multiprocesamiento Simétrico</h5>
+        <img src="img/Img4-4.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Un multiprocesador simétrico es un sistema computacional con múltiples procesadores idénticos que
+            comparten memoria y se conectan a través de un bus. La contención del bus previene el escalado de esta
+            arquitectura.
+        </p>
+
+        <h5 style="padding-top: 5%;">Computación En Clúster</h5>
+        <img src="img/Img4-5.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Un clúster es un grupo de ordenadores débilmente acoplados que trabajan en estrecha colaboración, de modo
+            que en algunos aspectos pueden considerarse como un solo equipo, ya que suelen tener un solo
+            nodo principal, una cantidad de nodos de procesamiento y, posiblemente, algunos nodos especializados.
+        </p>
+
+        <h5 style="padding-top: 5%;">Procesamiento Paralelo Masivo</h5>
+        <p>
+            Es un paradigma de procesamiento en el que cientos o miles de nodos de procesamiento trabajan en partes de
+            una tarea informática en paralelo. Cada uno de estos nodos ejecuta instancias individuales
+            de un sistema operativo. Tienen sus propios dispositivos de entrada y salida
+            y no comparten memoria. Logran una tarea informática común comunicándose entre sí a través de una
+            interconexión.
+        </p>
+
+        <h5 style="padding-top: 5%;">Computación Distribuida</h5>
+        <img src="img/Img4-6.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Es un método que consiste en hacer que varias computadoras trabajen juntos para
+            resolver un problema común. De este modo, una red de computadoras forma una única que
+            brinda recursos a gran escala para afrontar desafíos complejos.
+        </p>
+
+        <h5 style="padding-top: 5%;">Computadoras Paralelas Especializadas</h5>
+        <p>
+            Existen dispositivos paralelos especializados que generan interés. Aunque no son específicos para un
+            dominio, tienden a ser aplicables sólo a unas pocas clases de problemas paralelos.
+        </p>
+
+        <h5 style="padding-top: 5%;">Circuitos integrados de aplicación específica</h5>
+        <p>
+            Debido a que un circuito integrado para aplicaciones específicas es específico para una aplicación dada,
+            puede ser completamente optimizado para esa aplicación. Como resultado, para una aplicación dada,
+            un circuito integrado para aplicaciones específicas tiende a superar a un ordenador de propósito general.
+        </p>
+
+        <h5 style="padding-top: 5%;">Procesadores vectoriales</h5>
+        <img src="img/Img4-7.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Se trata de procesadores con unidades vectoriales segmentadas, además de
+            unidades escalares. Cada unidad vectorial dispone de un banco de registros
+            vectoriales y una unidad funcional vectorial fuertemente segmentada.
+            Dispone de instrucciones escalares clásicas e instrucciones vectoriales (<i>load, store, alu, mixed</i>).
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>4.2.2- Arquitectura de computadores secuenciales</em></h5>
+
+        <p>
+            Las <b>computadoras secuenciales</b> se basan en el modelo introducido por <i>John Von Neumann</i>,
+            la cual consiste en:
+        </p>
+
+        <ul style="margin-left: 3%;">
+            <li>
+                Una Unidad Central de Procesamiento (CPU).
+            </li>
+            <li>
+                Memoria principal para almacenar información.
+            <li>
+                Bus donde fluyan los datos.
+            </li>
+            <li>
+                Mecanismo de sincronización.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;">Segmentación de Instrucciones Pipeline</h5>
+        <p>
+            Por las limitaciones que este tiene se han desarrollado algunas estrategias
+            para aumentar el rendimiento. La más conocida es la segmentación
+            de instrucciones Pipeline que consiste en llevar a la cola de
+            instrucciones la siguiente instrucción que se ejecutará
+        </p>
+        <img src="img/Img4-8.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            En estos sistemas, los valores de las salidas, en un momento dado, no dependen exclusivamente de los
+            valores de las entradas en dicho momento, sino también de los valores anteriores.
+            El sistema más simple que existe se denomina: <b>Biestable</b>.
+        </p>
+
+        <h5 style="padding-top: 5%;">Biestable</h5>
+        <p>
+            Es un multivibrador capaz de permanecer en uno de dos estados posibles
+            durante un tiempo indefinido en ausencia de perturbaciones. Esta característica es
+            ampliamente utilizada en electrónica digital para memorizar información. El paso
+            de un estado a otro se realiza variando sus entradas.
+        </p>
+
+        <p>
+            La mayoría de estos sistemas están gobernados por señales de reloj a los cuales se los denomina sincronos.
+            Pero al contrario a todos ellos que no son gobernados por éste, se les conoce como asíncronos. Estos pueden
+            encontrarse en forma de Circuito integrado (Contador) o como estructuras en sistemas programados
+            (Registros de desplazamiento):
+        </p>
+
+        <ul style="margin-left: 3%;">
+            <li>
+                <b>Contador</b>: Circuito secuencial construido a partir de
+                biestable y puertas lógicas capaz de almacenar y contar los impulsos que recibe en la entrada destinada
+                a tal efecto, asimismo también actúa como divisor de frecuencia.
+            </li>
+            <li style="padding-top: 3%;">
+                <b>Registros de desplazamiento</b>: Consistente en una serie de
+                biestables, generalmente de tipo D, conectados en cascada,
+                que basculan de forma sincrénica con la misma sefial de reloj.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;">Taxonomía de Flynn</h5>
+        <p>
+            Esta taxonomía de las arquitecturas está basada en la clasificación atendiendo al flujo de datos
+            e instrucciones en un sistema. Un flujo de instrucciones es el conjunto de instrucciones secuenciales
+            que son ejecutadas por un único procesador, y un flujo de datos es el flujo secuencial
+            de datos requeridos por el flujo de instrucciones.
+
+            <br><br>
+
+            Se basa en el número de instrucciones y de la
+            secuencia de datos que la computadora utiliza para procesar información,
+            puede haber secuencias de instrucciones sencillas o múltiples y secuencias
+            de datos sencillas o múltiples.
+        </p>
+
+        <h5 style="padding-top: 5%;">Una instrucción, un dato (SISD)</h5>
+        <p>
+            Se refiere a una arquitectura computacional en la que un único procesador ejecuta un solo flujo de
+            instrucciones, para operar sobre datos almacenados en una única memoria, características:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                La CPU procesa únicamente una instrucción por cada ciclo de reloj.
+            </li>
+            <li>
+                Únicamente un dato es procesado en cada ciclo de reloj.
+            </li>
+            <li>
+                Es el modelo más antiguo de computadora y el más extendido.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;">Multiples instrucciones, un dato (MISD)</h5>
+        <p>
+            Donde muchas unidades funcionales realizan diferentes operaciones en los mismos datos.
+            Las arquitecturas segmentadas pertenecen a este tipo, características:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                Cada unidad ejecuta una instrucción distinta.
+            </li>
+            <li>
+                Cada unidad procesa el mismo dato.
+            </li>
+            <li>
+                Aplicación muy limitada en la vida real.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;">Una instrucción, múltiples datos (SIMD)</h5>
+        <p>
+            Es una técnica empleada para conseguir paralelismo a nivel de datos,
+            consisten en instrucciones que aplican una misma operación sobre un conjunto
+            más o menos grande de datos, características:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                Todas las unidades ejecutan la misma instrucción.
+            </li>
+            <li>
+                Cada unidad procesa un dato distinto.
+            </li>
+            <li>
+                Todas las unidades operan simultáneamente.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;">Múltiples instrucciones, múltiples datos (MIMD)</h5>
+        <p>
+            Es una técnica empleada para lograr paralelismo. Las máquinas que usan MIMD tienen
+            un número de procesadores que funcionan de manera asíncrona e independiente, características:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                Cada unidad ejecuta una instrucción distinta.
+            </li>
+            <li>
+                Todas las unidades operan simultáneamente.
+            </li>
+            <li>
+                Cada unidad procesa un dato distinto.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;"><em>4.2.3- Organización de direcciones de memoria</em></h5>
+        <p>
+            Una <b>dirección de memoria</b> es un identificador para una localización de memoria con
+            la cual un programa o un dispositivo pueden almacenar un dato para su posterior reutilización,
+            hay dos tipos de organización de direcciones de memoria:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                <b>Organización de direcciones de memoria contiguas</b>:
+                es aquella en la que las celdas de memoria se organizan de forma
+                consecutiva en la memoria. En este tipo de organización, la
+                dirección de memoria de una celda se puede calcular sumando la
+                dirección de la celda anterior y el tamaño de la celda actual.
+            </li>
+            <li style="padding-top: 2%;">
+                <b>Organización de direcciones de memoria no contiguas</b>:
+                es aquella en la que las celdas de memoria se organizan en
+                cualquier lugar de la memoria, sin ningún patrón
+                predecible. En este tipo de organización, la dirección de
+                memoria se asigna a cada celda de forma independiente.
+            </li>
+        </ul>
+
+        <p style="padding-bottom: 5%;">
+            La organización de direcciones de memoria es fundamental
+            para el funcionamiento de los sistemas informáticos,
+            ya que garantiza que los datos se almacenen y recuperen de
+            forma eficiente y precisa. Los ingenieros de software y hardware
+            deben comprender la organización de direcciones de memoria para
+            diseñar sistemas que sean eficientes y confiables.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>4.3.- Sistema de Memoria (compartida)</em></h4>
+        <hr color="red" size="10px" />
+
+        <p style="padding-top: 5%;">
+            La <b>memoria compartida</b> puede ser accedida por múltiples programas,
+            para comunicarse entre ellos o para evitar copias redundantes.
+            Dependiendo del contexto, los programas pueden ejecutarse en un mismo procesador
+            o en procesadores separados. La memoria usada entre dos hilos de ejecución dentro
+            de un mismo programa se conoce también como memoria compartida.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Multiprocesadores</em></h5>
+
+        <p>
+            La mayoría de los multiprocesadores comerciales son del tipo UMA (<i>Uniform Memory Access</i>):
+            todos los procesadores tienen igual tiempo de acceso a la memoria compartida.
+            En la arquitectura UMA los procesadores se conectan a la memoria a través de un bus,
+            una red multietapa o un conmutador de barras cruzadas y disponen de su propia memoria caché.
+            Los procesadores tipo NUMA (<i>Non Uniform Memory Access</i>) presentan tiempos de acceso
+            a la memoria compartida que dependen de la ubicación del elemento de proceso y la memoria.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>4.3.1- Redes de Interconexión dinámica (Indirecta)</em></h5>
+        <p>
+            Las <b>redes de interconexión dinámicas</b> son una tecnología emergente que permite la
+            conexión y comunicación entre diferentes sistemas informáticos en tiempo real.
+            Estas redes permiten la integración de diferentes plataformas y servicios, lo que
+            aumenta la eficiencia y reduce los tiempos de respuesta en los procesos empresariales.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Medio Compatido</em></h5>
+        <p>
+            Las redes de interconexión dinámica indirecta y de medio compartido son un tipo de arquitectura de redes
+            en las que múltiples dispositivos comparten un medio de transmisión de datos común,
+            como un cable o un canal inalámbrico. En esta arquitectura, no hay un nodo central que controle
+            la comunicación entre los dispositivos, sino que los dispositivos se comunican entre sí
+            a través de la red mediante el envío y recepción de paquetes de datos.
+
+            <br><br>
+
+            En general, las redes de interconexión dinámica indirecta y medio compartido se utilizan en redes de área
+            local de tamaño pequeño o mediano, donde el número de dispositivos conectados es relativamente pequeño
+            y la cantidad de datos transmitidos no es muy grande. Sin embargo, en redes de mayor tamaño, se suelen
+            utilizar otros tipos de arquitecturas de redes que permiten una transmisión más eficiente y una mejor
+            gestión del tráfico de datos.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Conmutadas</em></h5>
+        <p>
+            Una red conmutada, es clasificada como una conexión de diferentes ordenadores,
+            independientemente de su estructura para que se puedan interconectarse y al mismo tiempo intercambiar
+            informaciones, sin olvidar de los requerimientos o recursos que la complementan.
+
+            En un determinado momento cuando todos los ordenadores están conectados de unas hacia las otras, se les da
+            una nominación de conexión red local o local network, se compone de diferentes capas que permiten
+            el funcionamiento y la gestión de los dispositivos conectadoss:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li>
+                La capa de transporte
+            </li>
+            <li>
+                La capa de control
+            </li>
+            <li>
+                La capa de aplicación
+            </li>
+        </ul>
+
+        <p style="padding-bottom: 5%;">
+            Las redes de interconexión dinámica conmutadas ofrecen ventajas
+            frente a otras tecnologías de red, como la escalabilidad,
+            la flexibilidad y la eficiencia energética.
+            Permiten la integración de diferentes tipos de
+            dispositivos y sistemas, lo que las hace ideales para la implementación de
+            soluciones IoT y la automatización industrial.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>4.4.- Sistemas de Memoria Distribuida</em></h4>
+        <hr color="red" size="10px" />
+
+        <p style="padding-top: 5%;">
+            Los <b>sistemas de memoria distribuida</b> son una arquitectura de cómputo en la que la memoria principal de
+            una
+            computadora está distribuida en múltiples nodos o máquinas interconectadas en una red. En lugar de depender
+            de una única memoria centralizada, los datos se almacenan y se acceden de manera distribuida en nodos.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Multicomputadores</em></h5>
+        <p>
+            Los sistemas multicomputadores se pueden ver como un
+            computador paralelo en el cual cada procesador tiene su
+            propia memoria local.
+
+            <br><br>
+
+            En estos sistemas la memoria se encuentra distribuida y no compartida como
+            en los sistemas multiprocesador. Los computadores se comunican a través de
+            paso de mensajes, ya que éstos sólo tienen acceso directo a su memoria local
+            y no a las memorias del resto de procesadores.
+
+        </p>
+        <img src="img/Img4-9.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            La transferencia de los datos se realiza a través de la red de
+            interconexión que conecta un subconjunto de procesadores con
+            otro subconjunto. La transferencia de unos procesadores a otros se
+            realiza por tanto por múltiples transferencias entre procesadores
+            conectados dependiendo del establecimiento de dicha red,
+            entre sus características están:
+        </p>
+
+        <ul style="margin-left: 2%;">
+            <li style="padding-top: 2%;">
+                La memoria es privada, cada procesador tiene un mapa de
+                direcciones propio que no es accesible directamente a los demás.
+            </li>
+            <li style="padding-top: 2%;">
+                Los nodos colaboran para ejecutar la misma aplicación.
+            </li>
+            <li style="padding-top: 2%;">
+                En un multicomputador, cada nodo es una computadora clásica.
+            </li>
+            <li style="padding-top: 2%;">
+                La compartición de datos es explícita, ya que el acceso a datos
+                comunes es por paso de mensajes.
+            </li>
+        </ul>
+
+        <h5 style="padding-top: 5%;"><em>4.4.1- Redes de interconexión estáticas</em></h5>
+        <p>
+            Las <b>redes de interconexión estáticas</b> son topologías de red fijas utilizadas en sistemas paralelos y
+            distribuidos para conectar nodos o procesadores. Proporcionan una comunicación eficiente entre los nodos,
+            aunque pueden presentar limitaciones en términos de escalabilidad y flexibilidad.
+        </p>
+
+        <img src="img/Img4-10.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+
+        <p>
+            Estas redes ofrecen ventajas en términos de latencia, ancho de banda y escalabilidad, ya que permiten la
+            comunicación directa entre nodos sin depender de una única ruta de comunicación centralizada. Además, la
+            estructura estática facilita el diseño y la implementación de algoritmos de comunicación y planificación.
+        </p>
+
+        <p style="padding-bottom: 5%;">
+            Sin embargo, una limitación de las redes de interconexión estáticas es que su capacidad de escalabilidad
+            está limitada por la cantidad de enlaces físicos disponibles y la topología de la red. Además, la falta de
+            flexibilidad para reconfigurar la conectividad puede dificultar la adaptación a cambios en la carga de
+            trabajo o la incorporación de nuevos nodos.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>4.5.- Casos para estudio</em></h4>
+        <hr color="red" size="10px" />
+
+        <p style="padding-top: 5%;">
+            La computación paralela se utiliza ampliamente en muchos campos y aplicaciones para realizar cálculos y
+            tareas intensivas en computación de manera más rápida y eficiente. Algunos ejemplos de casos reales
+            de computación paralela son:
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Simulaciones científicas</em></h5>
+        <img src="img/Img4-15.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Los científicos utilizan la computación paralela para simular fenómenos complejos en campos como la física,
+            la química, la biología y la meteorología. Estas simulaciones requieren una gran cantidad de cálculos y se
+            benefician del poder de procesamiento paralelo para acelerar los tiempos de ejecución.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Procesamiento de imágenes y video</em></h5>
+        <img src="img/Img4-14.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            Aplicaciones como el procesamiento de imágenes médicas, análisis de imágenes satelitales, reconocimiento
+            facial y procesamiento de video requieren un procesamiento intensivo y se benefician de la computación
+            paralela para realizar operaciones en paralelo en grandes conjuntos de datos.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Aprendizaje automático y redes neuronales</em></h5>
+        <img src="img/Img4-13.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            El entrenamiento de modelos de aprendizaje automático, como redes neuronales profundas, puede ser
+            computacionalmente intensivo. La computación paralela se utiliza para distribuir el cálculo en múltiples
+            nodos o unidades de procesamiento gráfico (GPU) para acelerar el entrenamiento y mejorar el rendimiento.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Análisis de big data</em></h5>
+        <img src="img/Img4-11.png" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            El análisis de grandes volúmenes de datos en entornos de big data requiere técnicas de computación paralela
+            para procesar y analizar los datos de manera eficiente. Esto incluye tareas como la minería de datos, el
+            procesamiento de registros y la generación de informes en tiempo real.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Simulaciones de fluidos y dinámica de estructuras</em></h5>
+        <img src="img/Img4-12.jpg" style="height: 30%; width: 40%; padding-top: 5%; padding-bottom: 3%;">
+        <p>
+            En la ingeniería y la industria, se utilizan simulaciones de fluidos y dinámica estructural para analizar el
+            comportamiento de fluidos y estructuras en diferentes condiciones. Estas simulaciones se ejecutan en
+            paralelo para acelerar los tiempos de cálculo y permitir análisis más detallados.
+        </p>
+
+    </div>
+
+
+    <footer>
+        Copyright &copy; 2023 || Erik Daniel Rodr&iacute;guez Garc&iacute;a
+    </footer>
+</body>
+
+</html>

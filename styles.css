@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Open Sans';
+	min-height: 100vh;
+	background: url(img/back.jpg) repeat-y;
+	background-size: contain;
+	background-position: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.msg-area1 {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+	width: 90%;
+	color: #fff;
+	text-align: center;
+    margin: auto;
+    margin-top: 5%;
+	padding: 10px 6%;
+	font-size: 30px;
+}
+
+.msg-area1 p{
+	padding: 20px 0;
+    font-size: 29px;
+    text-align: justify;
+}
+
+.msg-area1 li{
+	padding: 1px 0;
+    font-size: 29px;
+    text-align: justify;
+}
+
+.header{
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    padding: 5px 3%;
+}
+
+.header .logo{
+    font-weight: bolder;
+	font-size: 20px;
+	color: #333;
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    position: relative;
+    float: left;
+}
+
+.header .nav-links a{
+    font-size: 15px;
+    padding: 20px;
+    color: #0099ff;
+    text-decoration: none;
+	display: block;
+	border-radius: 40px;
+}
+
+.header .nav-links li a:hover{
+    background-color: #000;
+	color: #fff;
+}
+
+#menu-bar{
+	display: none;
+}
+
+header label{
+	font-size: 20px;
+	color: #333;
+	cursor: pointer;
+	display: none;
+}
+
+.msg-area1 .right{
+	float: right;
+	margin-top: 6%; 
+	margin-bottom: 5%; 
+	padding-left: 3%;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(18, 18, 18);
+    margin-top: 10px;
+    color: white;
+  }
+
+@media(max-width: 991px){
+	header{
+		padding: 20px;
+	}
+
+
+	.header .logo{
+		font-size: 15px;
+		color: #333;
+	}
+
+	header label{
+		display: initial;
+        font-size: 15px;
+	}
+
+	header nav{
+		position: absolute;
+		top: 100%; left: 0; right: 0;
+		background: #fff;
+		border-top: 1px solid #000;
+		display: none;
+	}
+
+	header nav .nav-links li{
+		width: 100%;
+
+	}
+
+	header nav .nav-links li a{
+		font-size: 15px;
+		padding: 20px;
+		color: #333;
+		display: block;
+		border-radius: 10px;
+	}
+
+	#menu-bar:checked ~ nav{
+		display: initial;
+	}
+
+    .msg-area1 {
+        font-size: 20px;
+    }
+    
+    .msg-area1 p{
+        padding: 20px 0;
+        font-size: 19px;
+		clear: right;
+    }
+
+    .msg-area1 li{
+        font-size: 19px;
+    }
+
+	.msg-area1 .right{
+		float: none;
+		margin-bottom: 0%; 
+		padding-left: 0%;
+	}
+}

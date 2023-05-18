@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad II</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="img/jpg" href="img/icono.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <p>ARQUITECTURA DE COMPUTADORAS</p>
+        </div>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="u1.html">Unidad I</a></li>
+                <li><a href="u2.html">Unidad II</a></li>
+                <li><a href="u3.html">Unidad III</a></li>
+                <li><a href="u4.html">Unidad IV</a></li>
+                <li><a href="actPract.html">Pr&aacute;cticas</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="msg-area1">
+        <h2>Unidad II</h2>
+        <h3>Estructura y funcionamiento de la unidad central de procesamiento</h3>
+        <p style="padding-bottom: 5%;">La <b>Unidad Central de Procesamiento</b> o CPU es un componente
+            electr&oacute;nico en forma de chip fundamental para todo equipo de computo,
+            com&uacute;nmente est&aacute; instalado sobre la placa base a trav&eacute;s de un socket o z&oacute;calo;
+            es importante recordar que su principal funci&oacute;n es realizar todos los c&aacute;lculos
+            aritm&eacute;ticos l&oacute;gicos que generan los programas y el sistema operativo alojados en el disco
+            duro o almacenamiento central. La CPU toma las instrucciones desde la memoria RAM para
+            procesarlas y posteriormente enviar la respuesta de nuevo a la memoria RAM,
+            de esta forma se crea un flujo de trabajo con el que puede interactuar el usuario.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>2.1.- Organizaci&otilde;n del procesador</em></h4>
+        <hr color="red" size="10px" />
+        <p style="padding-top: 4%;">La <i>organizaci&oacute;n del procesador</i> es la forma en que los componentes y circuitos
+            del procesador son interconectados y coordinados. Estos componentes son los siguientes:</p>
+
+        <img src="img/Img2-1.png" style="height: 40%; width: 50%; padding-top: 5%; padding-bottom: 3%;">
+        <ul style="margin-left: 3%; padding-bottom: 5%;">
+            <li style="padding-top: 2%;"><strong>Unidad de interface con el bus</strong>:
+                Recibe las instrucciones y los datos de la memoria RAM por el bus del sistema.</li>
+            <li style="padding-top: 2%;"><strong>Unidad de decodificaci&oacute;n</strong>:
+                Decodifica la instrucci&oacute;n para determinar a qu&eacute; instrucci&oacute;n corresponde
+                la secuencia que acaba de leer y saber qu&eacute; tiene que hacer el procesador.</li>
+            <li style="padding-top: 2%;"><strong>Unidad aritm&eacute;tico-l&oacute;gica (ALU)</strong>:
+                Realiza operaciones matem&aacute;ticas (aritm&eacute;ticas y l&oacute;gicas) con los datos.</li>
+            <li style="padding-top: 2%;"><strong>Registros</strong>:
+                Almacenan temporalmente los datos de la instrucci&oacute;n que est&aacute; ejecutando
+                la unidad aritm&eacute;tico-l&oacute;gica.</li>
+            <li style="padding-top: 2%;"><strong>Reloj interno</strong>:
+                Proporciona pulsos para que todos los elementos se sincronicen.</li>
+            <li style="padding-top: 2%;"><strong>Unidad de control (UC)</strong>:
+                Coordina el funcionamiento de todas las anteriores,
+                indicando de qui&eacute;n es el turno de operar en cada instante.</li>
+        </ul>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>2.2.- Estructura de registros</em></h4>
+        <hr color="red" size="10px" />
+        <p style="padding-top: 4%;">Los <b>registros</b> son, elementos de memoria de acceso r&aacute;pido que se encuentran
+            dentro del
+            procesador. Constituyen un espacio de trabajo para el procesador y se utilizan como un espacio de
+            almacenamiento temporal. Se implementan utilizando elementos de memoria RAM est&aacute;tica (static RAM).
+            Son imprescindibles para ejecutar las instrucciones, entre otros motivos,
+            porque la ALU solo trabaja con los registros internos del procesador.
+        </p>
+
+        <p>Los registros y la organizaci&oacute;n que tienen cambia de un procesador a otro.
+            Una parte de los registros pueden ser visibles para el usuario y
+            otra solo se utiliza en el control y estado interno del procesador.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>2.2.1- Registros visibles para el usuario</em></h5>
+        <p>Los <b>registros visibles para el usuario</b> son un conjunto de registros que pueden
+            ser accedidos directamente por los programas que se ejecutan en la CPU,
+            son una parte importante de la arquitectura de la
+            CPU, ya que son utilizados por los programas para almacenar
+            temporalmente datos que se est&aacute;n procesando y se pueden dividir en dos categor&iacute;as principales:
+        </p>
+
+        <ol style="margin-left: 3%;">
+            <li value="1" style="padding-top: 2%;"><b>Registros de prop&oacute;sito general</b>:
+                Son utilizados para tareas generales y pueden ser accedidos por los programas.
+                Almacenan datos temporales, direcciones de memoria y otros valores importantes
+                para el procesamiento de datos.</li>
+
+            <li style="padding-top: 2%;"><b>Registros de control</b>:
+                Son utilizados para el control del flujo de ejecuci&oacute;n de un programa.
+                Incluyen el contador de programa (program counter),
+                que mantiene la direcci&oacute;n de memoria de la siguiente instrucci&oacute;n a ejecutar,
+                y el registro de estado (status register), que almacena informaci&oacute;n del estado de la CPU.</li>
+        </ol>
+
+        <h5 style="padding-top: 5%;"><em>2.2.2- Registros de control y de estados</em></h5>
+
+        <p>Los registros de control son utilizados por la unidad de control para controlar
+            el funcionamiento de la CPU y por programas privilegiados del sistema
+            para controlar la ejecuci&oacute;n de programas; regulan la ejecuci&oacute;n de instrucciones,
+            controla que no existen desfases entre operaciones del CPU y permiten controlar estados
+            en estos registros se almacena la informaci&oacute;n generada por la unidad de control y tambi&eacute;n
+            informaci&oacute;n espec&iacute;fica para el sistema operativo.
+        </p>
+
+        <p>De forma general se utilizan para la transferencia de datos entre
+            la CPU y la memoria. Dentro de la CPU, los datos tienen que
+            ofrecerse a la ALU para su procesamiento. La ALU puede tener
+            acceso directo al de datos y a los registros visibles al usuario.
+            Como alternativa, puede haber registros intermedios adicionales en el l&iacute;mite de la ALU;
+            estos registros sirven como registros de entrada y salida de la ALU e intercambian datos
+            con el de datos y los registros visibles al usuario.</p>
+
+        <p>Todos los diseños de la CPU incluyen un registro o conjunto de registros de estado del programa (PSW),
+            los cuales contienen informaci&oacute;n de estado, normalmente son c&oacute;digos de condici&oacute;n,
+            adem&aacute;s de otra informaci&oacute;n de estado. Entre los campos o indicadores se incluyen los siguientes:
+        </p>
+
+        <ul style="margin-left: 3%;">
+            <li style="padding-top: 2%;"><b>Signo</b>:
+                contiene el bit de signo del resultado de la &uacute;ltima operaci&oacute;n aritm&eacute;tica.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Cero</b>:
+                puesto a uno cuando el resultado es 0.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Acarreo</b>:
+                puesto a uno si una operaci&oacute;n da lugar a un acarreo (suma) o a un adeudo (resta)
+                del bit m&aacute;s significativo. Se usa en operaciones aritm&eacute;ticas multipalabras.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Igual</b>:
+                puesto a uno si el resultadode una comparaci&oacute;n l&oacute;gica es igualdad.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Desbordamiento</b>:
+                indica un desbordamiento aritm&eacute;tico.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Interrupciones</b>:
+                permite o inhabilita interrupciones.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Supervisor</b>:
+                indica si la CPU funciona en modo supervisor o usuario,
+                &uacute;nicamente en modo supervisor se pueden ejecutar ciertas instrucciones
+                privilegiadas y se puede acceder a ciertas &aacute;reas de memoria.
+            </li>
+        </ul>
+
+        <p>En el diseño de la organizaci&oacute;n de los registros de control y estado hay factores que se
+            tienen que tomar en cuenta, como el soporte el sistema operativo.
+            Algunos tipos de informaci&oacute;n de control son de utilidad espec&iacute;fica para el SO.
+            Si el diseñador de la CPU posee una comprensi&oacute;n funcional del SO que se va a utilizar, la
+            organizaci&oacute;n de los registros puede adaptarse, hasta cierto punto, a ese SO.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>2.2.3- Ejemplos de registros de CPU reales</em></h5>
+        <p style="text-align: center; font-size: 15px; padding-bottom: 0;">La CPU tiene 14 registros internos, cada uno
+            de 16 bits.</p>
+        <img src="img/Img2-2.png" style="height: 50%; width: 60%; padding-top: 0.4%; padding-bottom: 3%;">
+
+        <p style="text-align: center;">Motorola MC68000</p>
+        <img src="img/Img2-3.png" style="height: 40%; width: 50%; padding-top: 3%; padding-bottom: 3%;">
+        <p>El Motorola MC68000 distribuye sus registros de 32 bits en ocho de datos y nueve dedirecciones.
+            Los ocho registros de datos se usan principalmente para manipulaci&oacute;n de datos y
+            tambi&eacute;n se usan en direccionamiento como registros &iacute;ndice.
+        </p>
+
+        <p style="text-align: center; margin-top: 4%;">Intel 8086</p>
+        <img src="img/Img2-4.png" style="height: 40%; width: 50%; padding-top: 3%; padding-bottom: 3%;">
+        <p>En el Intel 8086 cada uno de los registros tiene un uso especial,
+            aunque algunos registros se pueden emplear tambi&eacute;n para un uso general.
+            Contiene cuatro registros de datos de 16 bits que son direccionables y
+            cuatro registros punteros e &iacute;ndices de 16 bits.
+            Los registros de datos pueden utilizarse como de uso general
+            en algunas instrucciones. En otras, los registros se usan impl&iacute;citamente.
+        </p>
+
+        <p style="text-align: center; margin-top: 4%;">Intel 80386</p>
+        <img src="img/Img2-5.png" style="height: 50%; width: 60%; padding-top: 3%; padding-bottom: 3%;">
+        <p style="padding-bottom: 5%;">El Intel 80386 es un microprocesador de 32 bits diseñado
+            como una ampliacion del 8086 16 bits, contiene los ocho registros de 32 bits de
+            prop&oacute;sito general que se utilizan para el c&aacute;lculo de direcciones y operaciones con datos y
+            un barrel shifter de 64 bits que se utiliza para acelerar las operaciones de desplazamiento,
+            rotaci&oacute;n, multiplicaci&oacute;n y divisi&oacute;n, un registro de indicadores, seis registros de segmento de 16 bits
+            que mantienen valores de selectores de segmentos identificando los segmentos que se pueden direccionar,
+            tres registros de control de 32 bits que mantienen el estado de la m&aacute;quina
+            que afecta a todas las tareas en el sistema, cuatro registros de direcciones de sistema
+            para referenciar tablas o segmentos, seis registros de depuracion que simplifica la depuraci&oacute;n
+            de programas y dos registros de test para verificar el funcionamiento del RAM/CAM
+            (Content Addressable Memory) en el buffer de conversi&oacute;n por b&uacute;squeda (TLB) de la unidad de paginado.
+        </p>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;"><em>2.3.- El ciclo de instrucci&oacute;n</em></h4>
+        <hr color="red" size="10px" />
+
+        <p style="padding-top: 5%;">
+            Un ciclo de instrucci&oacute;n es el per&iacute;odo que tarda la unidad central de proceso en ejecutar una instrucci&oacute;n
+            de lenguaje m&aacute;quina, Comprende una secuencia de acciones determinada que debe llevar a cabo la CPU para
+            ejecutar cada instrucci&oacute;n en un programa. Cada instrucci&oacute;n del juego de instrucciones,
+            puede requerir diferente n&uacute;mero de ciclos de instrucci&oacute;n para su ejecuci&oacute;n.
+            Un ciclo de instrucci&oacute;n est&aacute; formado por uno o m&aacute;s ciclos m&aacute;quina.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>2.3.1- Ciclo Fetch-Decode-Execute</em></h5>
+        <p>El <b>Ciclo Fetch-Decode-Execute</b> es una serie de fases encargada de ejecutar
+            un programa en una computadora es el CPU, y lo hace mediante
+            el ciclo Fetch-Decode-Execute, y con &eacute;l se realizan todas las tareas posibles.
+            Est&aacute; conformado por las siguientes etapas:
+        </p>
+
+        <img src="img/Img2-6.png" style="height: 40%; width: 50%; padding-top: 5%; padding-bottom: 3%;">
+
+        <ol style="margin-left: 3%;">
+            <li value="1" style="padding-top: 2%;"><b>Traer la instrucci&oacute;n (Fetch)</b>:
+                Se obtiene la instrucci&oacute;n desde la memoria y se almacena en el
+                registro de la CPU para nuevas indicaciones.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Decodificar la instrucci&oacute;n (Decode)</b>:
+                Se identifica el modo de direccionamiento de la
+                instrucci&oacute;n y ubicaci&oacute;n de datos a tratar.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Carga de par&aacute;metros</b>:
+                Se carga la lectura, cargando todos los datos identificados
+                en el pasoanterior.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Ejecutar (Execute)</b>:
+                Se ejecuta la instrucci&oacute;n ya configurada, realiza la tarea indicada.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Almacenar</b>:
+                Se almacena el resultado obtenido de la instrucci&oacute;n.
+            </li>
+
+            <li style="padding-top: 2%;"><b>Actualizar PC</b>:
+                Se actualiza el registro PC (Program Counter) que
+                contiene la siguiente direcci&oacute;n a ejecutar.
+            </li>
+        </ol>
+
+        <p>Al ser un ciclo, estos pasos se van repitiendo una y otra vez
+            con las diferentes instrucciones que se le dan a la computadora.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>2.3.2- Segmentaci&oacute;n de instrucciones</em></h5>
+        <p>Es una t&eacute;cnica que consiste en dividir el ciclo de ejecuci&oacute;n de
+            las instrucciones en un conjunto de etapas.
+            Estas etapas pueden coincidir o no con las fases del ciclo de
+            ejecuci&oacute;n de las instrucciones.
+        </p>
+
+        <img src="img/img5.png" style="height: 50%; width: 60%; padding-top: 3%; padding-bottom: 3%;">
+
+        <p>El objetivo de la segmentaci&oacute;n es ejecutar simult&aacute;neamente diferentes etapas
+            de distintas instrucciones, lo cual permite aumentar el rendimiento
+            del procesador sin tener que hacer m&aacute;s r&aacute;pidas todas las unidades del
+            procesador y sin tener que duplicarlas.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>2.3.3- Conjunto de instrucciones</em></h5>
+        <p>
+            El <b>conjunto de instrucciones</b> es un juego de instrucciones
+            que tiene programadas el microprocesador y que es capaz de ejecutar,
+            El t&eacute;rmino describe los aspectos del procesador generalmente visibles,
+            incluyendo los tipos de datos nativos, las instrucciones, los registros,
+            la arquitectura de memoria y las interrupciones, entre otros aspectos.
+            Existen dos arquitecturas completamente diferentes en las que se basan
+            los microprocesadores actuales.
+        </p>
+
+        <ol style="margin-left: 3%;">
+
+            <li value="1" style="padding-top: 2%;"><b>Arquitectura CISC</b>:
+                <i>Complex Instruction Set Computing</i> en ingles,
+                es un conjunto de instrucciones completas y lentas de ejecutar,
+                que agrupaban varias operaciones de bajo nivel en la misma
+                instrucci&oacute;n. Esto da lugar a programas pequeños y sencillos de
+                desarrollar que adem&aacute;s realizaban pocos accesos a memoria.
+
+                <img src="img/Img2-7.png"
+                    style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-top: 3%; padding-bottom: 3%;">
+
+            </li>
+
+            <li style="padding-top: 2%;"><b>Arquitectura RISC</b>:
+                <i>Reduced Instruction Set Computing</i> en ingles,
+                es un conjunto de instrucciones simples que se ejecutan
+                r&aacute;pidamente en el procesador, aunque implica que para
+                una tarea compleja ser&aacute; necesario un mayor n&uacute;mero de ellas,
+                por un programa tendr&aacute; una longitud mayor y adem&aacute;s acceder&aacute;
+                en un mayor n&uacute;mero de ocasiones a los datos almacenados en
+                la memoria. Sus ventajas son que necesita una menor cantidad
+                de hardware y un menor consumo energ&eacute;tico.
+
+                <img src="img/Img2-8.png"
+                    style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-top: 3%; padding-bottom: 3%;">
+            </li>
+        </ol>
+
+        <h5 style="padding-top: 5%;"><em>2.3.4- Modos de direccionamiento</em></h5>
+        <p>Los <b>modos de direccionamiento</b> son las diferentes maneras de especificar
+            un operando dentro de una instrucci&oacute;n en lenguaje ensamblador, cada forma
+            especifica la forma de calcular la direcci&oacute;n de memoria efectiva de un operando
+            mediante el uso de la informaci&oacute;n contenida en registros y/o constantes,
+            contenida dentro de una instrucci&oacute;n de la m&aacute;quina o en otra parte, existen
+            los siguientes tipos:
+        </p>
+
+        <ul style="margin-left: 3%; padding-bottom: 5%;">
+            <li style="padding-top: 2%;"><strong>Inmediatos</strong>:
+                Transfiere un byte de datos inmediato hacia el operando destino;
+                es usado para inicializar registros o localidades de memoria y
+                para operar sobre ellos con valores constantes de datos,
+                sin operar con registros de segmento, por lo que no se puede
+                cargar un registro de segmento de manera inmediata.
+            </li>
+            <li style="padding-top: 2%;"><strong>Por Registro</strong>:
+                Transfiere un byte de datos desde un registro fuente hasta
+                un registro destino. Los dos operandos no pueden ser registros
+                de segmento, los cuales nunca pueden utilizarse como destino.
+            </li>
+            <li style="padding-top: 2%;"><strong>Directo</strong>:
+                Transfiere un byte de datos, contenido en una localidad de
+                memoria a un registro de 8 o 16 bits. La localidad
+                de memoria puede ser el operando fuente o destino.
+                La direcci&oacute;n de memoria se proporciona directamente como
+                parte de la instrucci&oacute;n.
+            </li>
+
+            <li style="padding-top: 2%;"><strong>Indirecto</strong>:
+                Almacena la direcci&oacute;n de memoria frecuente en un registro base o
+                en un registro &iacute;ndice.
+            </li>
+
+            <li style="padding-top: 2%;"><strong>Base m&aacute;s &iacute;ndice</strong>:
+                Transfiere un byte o palabra de datos entre un registro
+                y una localidad de memoria direccionada por la suma de un
+                registro base m&aacute;s un registro &iacute;ndice; es usado para
+                el acceso a tablas; el registro base retiene la direcci&oacute;n
+                de inicio de un arreglo de memoria, y el registro &iacute;ndice
+                retiene la posici&oacute;n relativa de un dato en un arreglo.
+            </li>
+        </ul>
+
+        <hr color="red" size="10px" />
+        <h4 style="padding-top: 2%; padding-bottom: 2%;">
+            <em>2.4.- Casos de estudio de CPU reales</em>
+        </h4>
+        <hr color="red" size="10px" /> 
+
+        <h5 style="padding-top: 5%;"><em>Motorola 68000</em></h5>
+        <p>En el <i>Motorola 68000</i> el mismo direccionamiento lleva impl&iacute;cito el tipo de registro
+            sobre el que trabaja (direcciones o datos). Est&aacute; basado en dos bancos de 8 registros de 32 bits.
+            Un banco es de datos (Dn) y el otro de punteros (An). Adem&aacute;s contiene un contador de programa de
+            32 bits y un registro de estado de 16 bits. Los registros de datos (D0 a D7) se pueden usar como
+            registros de 32 bits (.l), 16 bits (.w) y 8 bits (.b).
+            Cualquiera de ellos puede usarse como acumulador, &iacute;ndice o puntero.</p>
+
+        <h5 style="padding-top: 5%;"><em>Intel 8086</em></h5>
+        <p>Los modos de direccionamiento del <i>8086</i> (Crawford & Gelsinger, 1987) son muy irregulares.
+            Los registros del procesador, se usan para contener los datos con que se est&aacute; trabajando
+            puesto que el acceso a los registros es mucho m&aacute;s r&aacute;pido que los accesos a memoria.
+            Se pueden realizar operaciones aritm&eacute;ticas y l&oacute;gicas, comparaciones, entre otras.
+            Hay un campo para un registro (reg), que especifica uno de los operandos, y
+            otros dos campos (mod y r/m) para el otro.</p>
+
+        <h5 style="padding-top: 5%;"><em>Intel i3</em></h5>
+        <p>Los modos de direccionamiento del <i>Intel i3</i> se basa en que un modo de direccionamiento especifico
+            busca forma de calcular la direcci&oacute;n de memoria efectiva de un operando usando informaci&oacute;n contenida en
+            registros, constantes o una instrucci&oacute;n de la maquina o en otra parte.</p>
+
+        <h4 style="padding-top: 5%;"><em>Intel</em></h4>
+        <p>
+            Intel Corporation es una empresa estadounidense especializada
+            en la fabricaci&oacute;n de microprocesadores, chips y otros componentes electr&oacute;nicos para
+            ordenadores y dispositivos m&oacute;viles, entre los modelos de procesadores
+            que Intel ha desarrollado est&aacute;n:
+        </p>
+
+        <ul style="margin-left: 3%; padding-bottom: 5%;">
+            <li style="padding-top: 2%;"><strong>Intel 4004</strong>:
+                Lanzado en <i>1971</i>, es el primer microprocesador de la historia,
+                con una capacidad de procesamiento de 60.000 instrucciones por segundo.
+                Entre sus especificaciones t&eacute;cnicas se encuentran:
+                <ul style="margin-left: 3%; padding-bottom: 5%; padding-top: 3%;">
+                    <li>Microprocesador de 4 bits</li>
+                    <li>Contiene 2300 transistores</li>
+                    <li>M&aacute;xima velocidad del reloj 740 kHz</li>
+                    <li>Usa Arquitectura Harvard</li>
+                    <li>Instrucciones de 8 bits de ancho</li>
+                    <li>Conjunto de instrucciones est&aacute; formado por 46 instrucciones</li>
+                    <li>16 registros de 4 bits cada uno</li>
+                </ul>
+
+            </li>
+
+            <li style="padding-top: 2%;"><strong>Intel 8086</strong>:
+                Lanzado en <i>1978</i>, es el primer procesador de la familia x86,
+                con una velocidad de reloj de hasta 10 MHz y
+                una capacidad de direccionamiento de memoria de hasta 1 MB.
+                Entre sus especificaciones t&eacute;cnicas se encuentran:
+                <ul style="margin-left: 3%; padding-bottom: 5%; padding-top: 3%;">
+                    <li>Microprocesador de 16 bits</li>
+                    <li>Contiene 29000 transistores</li>
+                    <li>M&aacute;xima velocidad del reloj 10 MHz</li>
+                    <li>Usa Arquitectura Intel Architecture 32 bits, basada en CISC</li>
+                    <li>Instrucciones de 16 bits de ancho</li>
+                    <li>Conjunto de instrucciones est&aacute; formado por 86 instrucciones</li>
+                    <li>14 registros de 16 bits cada uno</li>
+                </ul>
+            </li>
+
+            <li style="padding-top: 2%;"><strong>Core i7</strong>:
+                Lanzado en <i>2008</i>, es la primera l&iacute;nea de procesadores Intel Core i,
+                con hasta 4 n&uacute;cleos y una velocidad de reloj de
+                hasta 3.6 GHz, destinados a ofrecer un alto
+                rendimiento en aplicaciones de productividad y multimedia.
+                Entre sus especificaciones t&eacute;cnicas se encuentran:
+                <ul style="margin-left: 3%; padding-bottom: 5%; padding-top: 3%;">
+                    <li>Microprocesador de 64 bits</li>
+                    <li>Contiene 731 millones de transistores</li>
+                    <li>M&aacute;xima velocidad del reloj 3.6 GHz</li>
+                    <li>Usa Arquitectura Nehalem</li>
+                    <li>Memoria de tres canales, con un ancho de datos de 192 bits</li>
+                    <li>Conjunto de instrucciones est&aacute; formado por 86 instrucciones</li>
+                    <li>16 registros de 64 bits cada uno</li>
+                </ul>
+            </li>
+
+            <li style="padding-top: 2%;"><strong>Core i9</strong>:
+                Lanzado en <i>2017</i>, es la l&iacute;nea de procesadores Intel Core i m&aacute;s
+                potente hasta la fecha, con hasta 18 n&uacute;cleos y
+                una velocidad de reloj de hasta 4.5 GHz,
+                diseñados para aplicaciones de alta intensidad
+                como la edici&oacute;n de video y renderizaci&oacute;n 3D.
+                Entre sus especificaciones t&eacute;cnicas se encuentran:
+                <ul style="margin-left: 3%; padding-bottom: 5%; padding-top: 3%;">
+                    <li>Microprocesador de 64 bits</li>
+                    <li>M&aacute;xima velocidad del reloj 4.5 GHz</li>
+                    <li>Usa Arquitectura Skylake</li>
+                    <li>Conjunto de instrucciones est&aacute; formado por 86 instrucciones</li>
+                    <li>16 registros de 64 bits cada uno</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h5 style="padding-bottom: 2%;"><em>Nomenclatura Intel Core</em></h5>
+        <img src="img/Img2-9.png"
+            style="display: block; margin: 0px auto; height: 40%; width: 60%; padding-bottom: 5%;">
+
+        <p>Desglosando un poco la imagen mostrada se obtienen los siguientes datos:</p>
+        <ul style="margin-left: 3%; padding-bottom: 5%; padding-top: 3%;">
+            <li><b>Intel Core</b>: indica la arquitectura a la que pertenece.</li>
+            <li><b>i7</b>: familia de procesadores de gama alta, dentro de Intel Core.</li>
+            <li><b>13</b>: el primer n&uacute;mero siempre indica la generaci&oacute;n, en este caso, la n&uacute;mero 13.</li>
+            <li><b>700</b>: indica que est&aacute; en la zona alta en cuanto a rendimiento, dentro de la gama i7.</li>
+            <li><b>K</b>: esta letra significa que la CPU no tiene la velocidad bloqueada (Unlocked),
+                as&iacute; que se puede hacer overclocking para aumentar su rendimiento. Est&aacute; pensado para juegos.</li>
+        </ul>
+        <p>Hay variaciones en la nomenclatura de los procesadores, pero siempre tendr&aacute; un significado
+            una pequeña lista para poder guiarse y escoger la opci&oacute;n correcta es la sigueinte:</p>
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 3%;">
+            <li><b>Sin identificador</b>: suelen usarse para ordenadores sobremesa.</li>
+            <li style="padding-top: 1%;"><b>X</b>: aquellos que tienen m&aacute;ximo rendimiento.</li>
+            <li style="padding-top: 1%;"><b>XE</b>: procesadores de con gran rendimiento (HEDT), pertenecientes a la
+                Extreme Edition.</li>
+            <li style="padding-top: 1%;"><b>K</b>: no tienen bloqueo de velocidad ni voltaje (se llaman Unlocked). Se
+                pueden overclockear, es
+                decir, aumentar su velocidad de f&aacute;brica.</li>
+            <li style="padding-top: 1%;"><b>KS</b>: son procesadores K con frecuencia Boost superior y mayor consumo.
+            </li>
+            <li style="padding-top: 1%;"><b>KF</b>: son de tipo K, pero sin gr&aacute;ficos integrados.</li>
+            <li style="padding-top: 1%;"><b>T</b>: procesador optimizado para dar prioridad a la potencia.</li>
+            <li style="padding-top: 1%;"><b>H (Port&aacute;til)</b>: gr&aacute;ficos de alto rendimiento.</li>
+            <li style="padding-top: 1%;"><b>G1-G7</b>: nos indica las caracter&iacute;sticas de la gr&aacute;fica integrada.
+                Son procesadores dif&iacute;ciles de encontrar, aunque alguno hay.</li>
+            <li style="padding-top: 1%;"><b>HK (Port&aacute;til)</b>: gr&aacute;ficos de alto rendimiento sin bloqueo de velocidad.
+            </li>
+            <li style="padding-top: 1%;"><b>HQ (Port&aacute;til)</b>: gr&aacute;ficos de alto rendimiento con cuatro n&uacute;cleos.</li>
+            <li style="padding-top: 1%;"><b>HF (Port&aacute;til)</b>: especificaciones de gama alta, pero sin GPU.</li>
+            <li style="padding-top: 1%;"><b>Y (Port&aacute;til)</b>: consumo muy bajo (por tanto, menos potentes).</li>
+            <li style="padding-top: 1%;"><b>U (Port&aacute;til)</b>: Consumo ultrabajo, no requiere ventiladores.</li>
+        </ul>
+
+        <p>Conocer la nomenclatura de los procesadores es importante, ya que es de utilidad para conocer
+            la gama al que pertenece el procesador, su generaci&oacute;n y potencia, brindando una idea muy aproximada de
+            si se trata de lo necesario para un equipo y su finalidad, ahorrando recursos en el proceso.</p>
+
+        <h4 style="padding-top: 5%;"><em>AMD</em></h4>
+        <img src="img/Img2-10.png"
+            style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-top: 3%; padding-bottom: 5%;">
+        <p>
+            AMD (<i>Advanced Micro Devices</i>) es una compañ&iacute;a estadounidense
+            que desarrolla procesadores de computaci&oacute;n y productos tecnol&oacute;gicos
+            similares de consumo. Sus productos principales incluyen microprocesadores,
+            chipsets para placas base, circuitos integrados auxiliares,
+            procesadores embebidos y procesadores gr&aacute;ficos para servidores,
+            estaciones de trabajo, computadores personales y aplicaciones para
+            sistemas embebidos.
+        </p>
+
+        <p>
+            AMD empieza a competir en el mercado cuando IBM genera un contrato para que Intel
+            y ellos produzcan los IBM 8086 y 8088. La arquitectura de dichos procesadores es propiedad de Intel;
+            sin embargo, al tener a disposici&oacute;n la arquitectura para los procesadores x86,
+            AMD se aventur&oacute; en ofrecer procesadores que har&iacute;an competencia a Intel.
+        </p>
+
+        <p>
+            En 1986 AMD tuvo que limpiar sus procesadores del c&oacute;digo de Intel por asusntos legales,
+            desarroll&oacute; c&oacute;digos nuevos y a la par descifr&oacute; el c&oacute;digo de Intel,
+            culminando en su primer procesador el <b><i>Am386</i></b> representando un parteaguas de
+            la nueva era en la cual se dieron cuenta que deb&iacute;an deslindarse totalmente de Intel
+            para poder crecer y ser competencia en el mercado.
+        </p>
+
+        <p>
+            Siguieron el AMD K5, K6. Algunos requerian nuevas placas base como el K7.
+            Con el procesador K8, AMD se pone a la delantera pues añade a la arquitectura K7
+            extensiones de 64 bit. Alrededor del 2005, llega el Athlon 64 x2,
+            este manejaba doble n&uacute;cleo basado en K8, marcando un nuevo hito para los procesadores.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>"Zen"</em></h5>
+        <p>
+            La arquitectura <i>"Zen"</i> constituy&oacute; un giro en el enfoque de diseño de los procesadores y represent&oacute;
+            una mejora inimaginable con respecto a los productos anteriores de AMD. Hab&iacute;a tres objetivos principales que
+            cumplir con la arquitectura "Zen":
+        </p>
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 3%;">
+            <li>El mejor rendimiento.</li>
+            <li>La mejor escalabilidad.</li>
+            <li>La mejor eficiencia.</li>
+        </ul>
+
+        <p>
+            AMD no solo logr&oacute; todos sus objetivos con la arquitectura "Zen", sino que, adem&aacute;s, los
+            preceptos centrales del diseño contin&uacute;an a disposici&oacute;n de los clientes de AMD en la actualidad, con la m&aacute;s
+            recientes versiones de esta arquitectura, que se encuentra en los procesadores AMD Ryzen.
+        </p>
+
+        <h5 style="padding-top: 5%;"><em>Ryzen</em></h5>
+
+        <p>
+            Ryzen es una l&iacute;nea​ de microprocesadores x86-64 basados en la microarquitectura Zen.
+            Ryzen es especialmente importante por su diseño y marc&oacute; el regreso de AMD al mercado de procesadores
+            de escritorio de gama alta en 2017.
+        </p>
+
+        <img src="img/Img2-11.png"
+            style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-top: 3%; padding-bottom: 3%;">
+
+        <p style="padding-bottom: 5%;">
+            Cuentan con la tecnolog&iacute;a "Precision Boost" que optimiza autom&aacute;ticamente el rendimiento del
+            procesador en tiempo real. Ofrecen la tecnolog&iacute;a de overclocking "XFR" que permite aumentar
+            el rendimiento de su procesador m&aacute;s all&aacute; de los niveles de f&aacute;brica. Ofrecen m&uacute;ltiples n&uacute;cleos
+            y subprocesos simult&aacute;neos, lo que los hace ideales para tareas que requieren un alto rendimiento 
+            y la GPU Radeon Vega, que ofrece un rendimiento de gr&aacute;ficos integrados mejorado.
+        </p>
+
+        <p style="padding-bottom: 5%;">
+            Cuentan con la tecnolog&iacute;a "Precision Boost" que optimiza autom&aacute;ticamente el rendimiento del
+            procesador en tiempo real. Ofrecen la tecnolog&iacute;a de overclocking "XFR" que permite aumentar
+            el rendimiento de su procesador m&aacute;s all&aacute; de los niveles de f&aacute;brica. Ofrecen m&uacute;ltiples n&uacute;cleos
+            y subprocesos simult&aacute;neos, lo que los hace ideales para tareas que requieren un alto rendimiento 
+            y la GPU Radeon Vega, que ofrece un rendimiento de gr&aacute;ficos integrados mejorado.
+        </p>
+
+        <h5 style="padding-bottom: 2%;"><em>AMD Ryzen 9 7950X</em></h5>
+        <img src="img/Img2-13.png"
+        style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-bottom: 3%;">
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 3%;">
+            <li><b>Plataforma</b>: Computadora de escritorio.</li>
+            <li><b>N. de n&uacute;cleos de CPU</b>: 16.</li>
+            <li><b>Reloj base</b>: 4.5GHz.</li>
+            <li><b>Socket</b>: AM5.</li>
+            <li><b>Reloj de aumento m&aacute;ximo</b>: Hasta 5.7GHz.</li>
+            <li><b>Temp. m&aacute;xima</b>: 95&deg;C.</li>
+            <li><b>TDP/TDP predeterminado</b>: 170W.</li>
+        </ul>
+
+        <h5 style="padding-bottom: 2%; padding-top: 3%;"><em>AMD Ryzen 3 3200G</em></h5>
+        <img src="img/Img2-14.png"
+        style="display: block; margin: 0px auto; height: 20%; width: 30%; padding-bottom: 3%;">
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 3%;">
+            <li><b>Plataforma</b>: Computadora de escritorio.</li>
+            <li><b>N. de n&uacute;cleos de CPU</b>: 4.</li>
+            <li><b>Reloj base</b>: 3.6GHz.</li>
+            <li><b>Socket</b>: AM4.</li>
+            <li><b>Reloj de aumento m&aacute;ximo</b>: Hasta 4GHz.</li>
+            <li><b>Temp. m&aacute;xima</b>: 95&deg;C.</li>
+            <li><b>TDP/TDP predeterminado</b>: 65W.</li>
+            <li><b>Modelo de gr&aacute;ficos</b>: Radeon Vega 8 Graphics.</li>
+        </ul>
+
+        <h5 style="padding-bottom: 2%; padding-top: 3%;"><em>AMD EPYC 9654</em></h5>
+        <img src="img/Img2-15.png"
+        style="display: block; margin: 0px auto; height: 30%; width: 40%; padding-bottom: 3%;">
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 1%;">
+            <li><b>Plataforma</b>: Servidor.</li>
+            <li><b>N. de n&uacute;cleos de CPU</b>: 96.</li>
+            <li><b>Reloj base</b>: 2.4GHz.</li>
+            <li><b>Tipo de memoria</b>: DDR5.</li>
+            <li><b>Reloj de aumento m&aacute;ximo</b>: Hasta 3.7GHz.</li>
+            <li><b>Canales de memoria</b>: 12.</li>
+            <li><b>TDP/TDP predeterminado</b>: 360W.</li>
+            <li><b>N. de hilos</b>: 192.</li>
+        </ul>
+
+        <h5 style="padding-bottom: 2%; padding-top: 3%;"><em>AMD Ryzen Threadripper PRO 5995WX</em></h5>
+        <img src="img/Img2-16.png"
+        style="display: block; margin: 0px auto; height: 30%; width: 40%; padding-bottom: 3%;">
+
+        <ul style="margin-left: 3%; padding-bottom: 3%; padding-top: 1%;">
+            <li><b>Plataforma</b>: Computadora de escritorio.</li>
+            <li><b>N. de n&uacute;cleos de CPU</b>: 64.</li>
+            <li><b>Reloj base</b>: 2.7GHz.</li>
+            <li><b>Tipo de memoria</b>: DDR4.</li>
+            <li><b>Reloj de aumento m&aacute;ximo</b>: Hasta 4.5GHz.</li>
+            <li><b>Canales de memoria</b>: 8.</li>
+            <li><b>TDP/TDP predeterminado</b>: 280W.</li>
+            <li><b>N. de hilos</b>: 128.</li>
+        </ul>
+
+        <h5 style="padding-bottom: 2%;"><em>Nomenclatura Ryzen</em></h5>
+        <img src="img/Img2-12.jpg"
+            style="display: block; margin: 0px auto; height: 40%; width: 60%; padding-bottom: 5%;">
+    </div>
+
+    <footer>
+        Copyright &copy; 2023 || Erik Daniel Rodr&iacute;guez Garc&iacute;a
+    </footer>
+</body>
+
+</html>
